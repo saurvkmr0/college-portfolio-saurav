@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My College Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #1C325B;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #555;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        footer {
+            background-color: #1C325B;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Media Query for Responsive Layout */
+        @media (max-width: 768px) {
+
+            .myIntro {
+                display: flex;
+                flex-direction: column;
+            }
+            .myIntro img {
+                width: 100%;
+                margin: 10px auto;
+            }
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #1C325B;
+                margin-top: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            nav ul li a {
+                padding: 1rem;
+                display: block;
+            }
+
+            .hamburger {
+                cursor: pointer;
+                display: block;
+            }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>My Portfolio</h1>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#oops">Oops</a></li>
+                <li><a href="#networking">Networking</a></li>
+                <li><a href="#os">Operating Systems</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="content active" style="margin-bottom: 100px; padding: 20px; background: rgba(193, 186, 161, 0.45); backdrop-filter: blur(12px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">            <h2>Welcome to My College Portfolio</h2>
+            <div style="display:flex; margin-bottom: 20px; " class="myIntro">
+                <img src="./Pi7_Passport_Photo.jpeg" style="width:30%">
+                <p style="padding-left:20px; font-size: 20px;">This portfolio showcases my academic journey and the subjects I've studied during my time in college. Over the years, I have developed a strong foundation in various technical domains, ranging from programming and networking to operating systems. Each section of this portfolio highlights not only the theoretical knowledge I've gained but also the practical projects that have helped me apply these concepts effectively.</p>
+            </div>
+        </section>
+
+        <section id="oops" class="content" style="margin-bottom: 100px">
+            <h2>Object-Oriented Programming</h2>
+            <p>
+                My journey into the world of Object-Oriented Programming (OOP) has been both challenging and rewarding. 
+                From understanding fundamental concepts to implementing real-world applications, OOP has shaped my problem-solving and design skills.
+            </p>
+            <h3>Core Concepts:</h3>
+            <ul>
+                <li>
+                    <b>Encapsulation</b>: The practice of bundling data and methods operating on that data within a single unit (class).
+                </li>
+                <li>
+                    <b>Inheritance</b>: Enabling a new class to derive properties and behaviors from an existing class.
+                </li>
+                <li>
+                    <b>Polymorphism</b>: The ability of different classes to be treated as instances of the same class through a common interface.
+                </li>
+                <li>
+                    <b>Abstraction</b>: Hiding complex implementation details and showing only essential features of an object.
+                </li>
+            </ul>
+            <h3>Languages and Tools:</h3>
+            <p>
+                My OOP journey involved hands-on experience with various programming languages and frameworks:
+            </p>
+            <ul>
+                <li>Java: Building robust, scalable applications.</li>
+                <li>Python: Implementing OOP principles in data-driven projects.</li>
+                <li>C++: Understanding memory management and low-level design with OOP.</li>
+                <li>JavaScript: Leveraging ES6 classes and object patterns in web development.</li>
+            </ul>
+            <h3>Projects:</h3>
+            <ul>
+                <li>
+                    <b>Library Management System:</b> An application to manage books, users, and transactions using OOP principles.
+                </li>
+                <li>
+                    <b>E-commerce Backend:</b> Designed product catalogs and user authentication using OOP-based architecture.                </li>
+            </ul>
+        </section>
+        
+
+        <!-- <section id="cs" class="content">
+            <h2>Computer Science</h2>
+            <p>My exploration of computer science, from programming basics to advanced algorithms and software engineering.</p>
+            <h3>Courses Taken:</h3>
+            <ul>
+                <li>Introduction to Programming</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Database Systems</li>
+                <li>Operating Systems</li>
+                <li>Software Engineering</li>
+            </ul>
+        </section> -->
+
+        <section id="networking" class="content" style="margin-bottom: 100px;">
+            <h2>Networking</h2>
+            <p>Networking forms the backbone of modern communication systems, enabling the transfer of data between devices, systems, and users worldwide. This section dives deep into the principles of networking, key protocols, configurations, and essential security mechanisms that ensure robust and reliable communication.</p>
+        
+            <h3>Key Concepts:</h3>
+            <h4>1. Network Protocols</h4>
+            <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*E4kX8sJtFMbofIVYyDIyaA.png" />
+            <p>Protocols define the rules for data communication. Common protocols include:</p>
+            <ul>
+                <li><strong>TCP/IP:</strong> Foundation of internet communication, combining reliability (TCP) and speed (IP).</li>
+                <li><strong>HTTP/HTTPS:</strong> Protocols for web communication, with HTTPS adding a security layer.</li>
+                <li><strong>DNS:</strong> Domain Name System for mapping domain names to IP addresses.</li>
+                <li><strong>FTP/SFTP:</strong> Protocols for file transfer over a network.</li>
+            </ul>
+            <p><em>Image Suggestion:</em> Diagram of the TCP/IP model showing its four layers (Application, Transport, Internet, and Network Access) and examples of protocols at each layer.</p>
+        
+            <h4>2. Network Configurations</h4>
+            <p>Understanding network setups and configurations is critical for both small and large networks:</p>
+            <ul>
+                <li><strong>LAN, WAN, and VLAN:</strong> Differences and use cases of local, wide, and virtual local area networks.</li>
+                <li><strong>IP Addressing:</strong> Concepts of IPv4, IPv6, and subnetting.</li>
+                <li><strong>Dynamic vs. Static IPs:</strong> When to use each for devices in a network.</li>
+            </ul>
+            <p><em>Image Suggestion:</em> Diagram showing a simple LAN setup with routers, switches, and connected devices.</p>
+            
+            <h4>3. Network Security</h4>
+            <p>Protecting data and devices is essential in networking:</p>
+            <ul>
+                <li><strong>Firewalls:</strong> Monitoring and controlling incoming/outgoing traffic.</li>
+                <li><strong>Encryption:</strong> Securing data with protocols like SSL/TLS and IPsec.</li>
+                <li><strong>VPNs:</strong> Enabling secure communication over public networks.</li>
+                <li><strong>Authentication Mechanisms:</strong> Passwords, two-factor authentication (2FA), and biometrics.</li>
+            </ul>
+            <p><em>Image Suggestion:</em> Illustration of a network with layers of security, showing firewalls, encryption paths, and VPN tunnels.</p>
+            
+            <h4>4. Routing and Switching</h4>
+            <img src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/6ENfwtM3iUH99JpYoEC9FY/04abc1654ceff2645f50713394ebcb73/network-switch.svg" />
+            <p>Efficient data transmission between networks is facilitated by:</p>
+            <ul>
+                <li><strong>Static and Dynamic Routing:</strong> Differences and when to use each.</li>
+                <li><strong>Routing Protocols:</strong> RIP, OSPF, and BGP.</li>
+                <li><strong>Switching Mechanisms:</strong> Circuit switching vs. packet switching.</li>
+            </ul>
+            <p><em>Image Suggestion:</em> Flowchart showing how routers and switches manage data flow between devices.</p>
+        
+            <h4>5. Wireless Communication</h4>
+            <p>Connecting devices without physical cables using technologies like:</p>
+            <ul>
+                <li><strong>Wi-Fi Standards:</strong> IEEE 802.11 protocols (a/b/g/n/ac/ax).</li>
+                <li><strong>Bluetooth:</strong> Short-range wireless communication.</li>
+                <li><strong>Cellular Networking:</strong> 4G, 5G, and their use cases.</li>
+            </ul>
+            <p><em>Image Suggestion:</em> Diagram of a wireless network including access points, devices, and signals.</p>
+        
+            <h4>6. Cloud Networking</h4>
+            <p>Utilizing cloud resources for scalable and flexible networking:</p>
+            <ul>
+                <li><strong>Virtual Private Cloud (VPC):</strong> Isolated networks in the cloud.</li>
+                <li><strong>Load Balancers:</strong> Distributing traffic efficiently across servers.</li>
+                <li><strong>Cloud Security:</strong> Identity and access management (IAM), encryption, and compliance.</li>
+            </ul>
+            <p><em>Image Suggestion:</em> Cloud architecture diagram showing VPCs, load balancers, and cloud servers.</p>
+        
+            <h3>Courses Taken:</h3>
+            <ul>
+                <li>Introduction to Networking</li>
+                <li>Network Security</li>
+                <li>Routing and Switching</li>
+                <li>Wireless Communication</li>
+                <li>Cloud Networking</li>
+            </ul>
+        </section>
+        
+
+        <section id="os" class="content" style="margin-bottom: 100px;">
+            <h2>Operating Systems</h2>
+            <p>
+                Operating Systems are the backbone of modern computing, acting as an interface between hardware and software while ensuring efficient resource management and user interaction. This journey explores core concepts, design principles, and implementation techniques.
+            </p>
+            <img src="https://media.fs.com/images/community/erp/sYCfS_wMbefX6PEp5AcSRJeNB5.jpg" alt="" style="width: 100%; height: auto; display: block;">
+            <h3>Key Concepts:</h3>
+            <ul>
+                <li>
+                    <b>Process Management:</b> Understanding how processes are created, scheduled, and managed. This includes concepts like process states, scheduling algorithms (FCFS, Round Robin, etc.), and inter-process communication (IPC).
+                </li>
+                <li>
+                    <b>Memory Management:</b> Covers memory allocation techniques, paging, segmentation, and virtual memory. Learn how the OS ensures efficient memory use while avoiding fragmentation.
+                </li>
+                <li>
+                    <b>File Systems:</b> Dive into the organization of data storage with hierarchical file systems, inode structures, and access control mechanisms. Learn how the OS ensures data integrity and security.
+                </li>
+                <li>
+                    <b>Concurrency and Multithreading:</b> Explore the principles of concurrent execution, synchronization techniques (semaphores, locks), and resolving deadlocks.
+                </li>
+            </ul>
+            <h3>Courses Taken:</h3>
+            <ul>
+                <li>Operating System Fundamentals</li>
+                <li>Process Management</li>
+                <li>Memory Management</li>
+                <li>File Systems</li>
+                <li>Concurrency and Multithreading</li>
+            </ul>
+            <h3>Projects:</h3>
+            <ul>
+                <li>
+                    <b>Custom Shell Implementation:</b> Developed a Linux shell with support for basic commands, piping, and redirection.
+                </li>
+                <li>
+                    <b>Page Replacement Simulator:</b> Simulated various page replacement algorithms (FIFO, LRU, Optimal) to understand memory management efficiency.
+                </li>
+                <li>
+                    <b>Multithreaded File Downloader:</b> Built a file downloader that leverages multithreading to speed up downloads by splitting files into parts.
+                </li>
+            </ul>
+        </section>
+        
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KLE TECHNOLOGICAL UNIVERSITY ~ SAURAV KUMAR</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#nav-links a');
+            const contentSections = document.querySelectorAll('.content');
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-links');
+
+            function setActiveLink(clickedLink) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                clickedLink.classList.add('active');
+            }
+
+            function showContent(contentId) {
+                contentSections.forEach(section => {
+                    if (section.id === contentId) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const contentId = this.getAttribute('href').substring(1);
+                    setActiveLink(this);
+                    showContent(contentId);
+
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
