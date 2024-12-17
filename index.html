@@ -147,7 +147,7 @@
             </div>
             <ul id="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#oops">Oops</a></li>
+                <li><a href="#oops">OOPS</a></li>
                 <li><a href="#networking">Networking</a></li>
                 <li><a href="#os">Operating Systems</a></li>
             </ul>
@@ -164,7 +164,8 @@
         </section>
 
         <section id="oops" class="content" style="margin-bottom: 100px">
-            <h2>Object-Oriented Programming</h2>
+            <h2 style="font-size: 36px;">Object-Oriented Programming</h2>
+            <img src="https://miro.medium.com/v2/resize:fit:1400/1*WytF5WhwecK02e3rge7t-A.jpeg"/>
             <p>
                 My journey into the world of Object-Oriented Programming (OOP) has been both challenging and rewarding. 
                 From understanding fundamental concepts to implementing real-world applications, OOP has shaped my problem-solving and design skills.
@@ -172,16 +173,22 @@
             <h3>Core Concepts:</h3>
             <ul>
                 <li>
-                    <b>Encapsulation</b>: The practice of bundling data and methods operating on that data within a single unit (class).
+                    <b style="font-size: 28px;">Encapsulation</b><br> 
+                    It is one of the core principles of object-oriented programming (OOP). It refers to the bundling of data (attributes) and methods (functions) that operate on that data into a single unit, typically a class. Encapsulation also involves restricting direct access to some of the object's components, which helps enforce data integrity and security.
                 </li>
                 <li>
-                    <b>Inheritance</b>: Enabling a new class to derive properties and behaviors from an existing class.
+                    <b style="font-size: 28px;">Inheritance</b><br>
+                    Inheritance is a key concept in Object-Oriented Programming (OOP) that allows one class (called the child class or subclass) to derive or inherit the properties and behaviors (methods and attributes) of another class (called the parent class or superclass).
+                    This promotes code reuse, extensibility, and hierarchical classification in your programs.
                 </li>
                 <li>
-                    <b>Polymorphism</b>: The ability of different classes to be treated as instances of the same class through a common interface.
+                    <b style="font-size: 28px;">Polymorphism</b><br>
+                    Polymorphism is a fundamental concept in object-oriented programming (OOP) that allows objects to be treated as instances of their parent class, even if they belong to derived (child) classes. It enables a single interface to represent different underlying forms (data types or behaviors).
+                    The term "polymorphism" comes from the Greek words "poly" (many) and "morph" (forms), meaning "many forms".
                 </li>
                 <li>
-                    <b>Abstraction</b>: Hiding complex implementation details and showing only essential features of an object.
+                    <b style="font-size: 28px;">Abstraction</b><br>
+                    Abstraction is an object-oriented programming (OOP) principle that focuses on hiding unnecessary implementation details from the user and only exposing essential features of an object or concept. It enables developers to create more generalized, modular, and maintainable code by simplifying complex systems.
                 </li>
             </ul>
             <h3>Languages and Tools:</h3>
@@ -197,11 +204,107 @@
             <h3>Projects:</h3>
             <ul>
                 <li>
-                    <b>Library Management System:</b> An application to manage books, users, and transactions using OOP principles.
+                    <b>Electricity Bill Management System:</b> An application to manage customer data and generate the electricity bill based and the unit consumed. 
                 </li>
-                <li>
-                    <b>E-commerce Backend:</b> Designed product catalogs and user authentication using OOP-based architecture.                </li>
+                
             </ul>
+            <h1 style="font-size: 36px;">CODE</h1>
+            <pre>
+                <code>
+                    #include <iostream>
+                        #include <string>
+                        #include <iomanip> 
+                        using namespace std;
+                        
+                        class Customer {
+                        private:
+                            string name;
+                            int customerID;
+                            double unitsConsumed;
+                        
+                        public:
+                            Customer(string customerName, int customerID, double units) 
+                                : name(customerName), customerID(customerID), unitsConsumed(units) {}
+                        
+                            string getName() const { return name; }
+                            int getCustomerID() const { return customerID; }
+                            double getUnitsConsumed() const { return unitsConsumed; }
+                        };
+                        
+                        class Bill : public Customer {
+                        private:
+                            double billAmount;
+                        
+                            void calculateBill() {
+                                if (getUnitsConsumed() <= 100) {
+                                    billAmount = getUnitsConsumed() * 1.5;
+                                } else if (getUnitsConsumed() <= 300) {
+                                    billAmount = 100 * 1.5 + (getUnitsConsumed() - 100) * 2.0;
+                                } else {
+                                    billAmount = 100 * 1.5 + 200 * 2.0 + (getUnitsConsumed() - 300) * 3.0;
+                                }
+                                billAmount += 50.0;
+                            }
+                        
+                        public:
+                            Bill(string name, int id, double units)
+                                : Customer(name, id, units), billAmount(0.0) {
+                                calculateBill();
+                            }
+                        
+                            void displayBill() const {
+                                cout << "\n--- Electricity Bill ---" << endl;
+                                cout << "Customer Name: " << getName() << endl;
+                                cout << "Customer ID: " << getCustomerID() << endl;
+                                cout << "Units Consumed: " << fixed << setprecision(2) << getUnitsConsumed() << endl;
+                                cout << "Total Amount (Rs): " << fixed << setprecision(2) << billAmount << endl;
+                            }
+                        };
+                        
+                        bool authenticateUser() {
+                            const string correctUsername = "admin";
+                            const string correctPassword = "password123";
+                            string username, password;
+                        
+                            cout << "Enter username: ";
+                            cin >> username;
+                            cout << "\nEnter password: ";
+                            cin >> password;
+                        
+                            if (username == correctUsername && password == correctPassword) {
+                                cout << "\nAuthentication Successful!\n";
+                                return true;
+                            } else {
+                                cout << "\nAuthentication Failed! Access Denied.\n";
+                                return false;
+                            }
+                        }
+                        
+                        int main() {
+                            if (!authenticateUser()) {
+                                return 0;
+                            }
+                        
+                            string name;
+                            int id;
+                            double units;
+                        
+                            cout << "\nEnter customer name: ";
+                            cin.ignore();
+                            getline(cin, name);
+                            cout << "Enter customer ID: ";
+                            cin >> id;
+                            cout << "Enter units consumed: ";
+                            cin >> units;
+                        
+                            Bill bill(name, id, units);
+                            bill.displayBill();
+                        
+                            return 0;
+                        }
+                        
+                </code>
+            </pre>
         </section>
         
 
